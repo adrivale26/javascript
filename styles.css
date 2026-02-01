@@ -1,0 +1,35 @@
+body {
+    background-color: #FFE2E2
+}
+
+ h1, h2 {
+    text-align: center;
+}
+
+#about-me {
+   background-color: #C2E9A0;
+   border-radius: 10px;
+   margin: 3px;
+}
+
+nav {
+    text-align: right;
+   
+}
+nav a {
+    text-decoration: none;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+span {
+    font-style: oblique
+}
+
+.footer-design {
+    text-align: center;
+    font-size: small;
+}
+
+
