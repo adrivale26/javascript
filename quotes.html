@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+  <html lang="en">
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Quotes</title>
+    
+     <style>
+     body {
+        background-color: lightblue;
+        text-align: center;
+        
+     }
+
+     h1, h2, footer{
+        text-align: center;
+     }
+
+     a:hover{
+        color: rgb(239, 108, 239);
+     }
+
+     a {
+         text-decoration: none;
+         padding: 8px;
+         margin: 5px;
+     }
+
+     footer {
+         font-size: small;
+     }
+
+     h1 {
+        font-style: italic;
+     }
+
+     
+
+     </style>
+   
+
+   </head> 
+
+   <body>
+   
+      <h1>Quote of the Day</h1>
+
+      <!-- Ask user for a number between 1 through 10, divide the number by 5 and use the remainder to display a quote. -->
+        <script>
+            var number = prompt("Please enter a number between 1 through 10: ");
+            var user_remainder = number % 5
+        
+            var quotes = [
+            "What you seek is seeking you.- Rumi", 
+            "All change is hard at first, messy in the middle and gorgeous at the end. - Robin Sharma",
+            "Every moment is a fresh beginning. - T.S Eliot", 
+            "The secret of getting ahead is getting started. - Mark Twain", 
+            "All you need is love. - The Beatles"
+        ];
+         
+          // displays quote as an alert 
+         // alert(quotes[user_remainder]);
+
+         // displays quote on the webpage
+            document.write("<p>" + quotes[user_remainder] + "</p>");
+      
+
+        var favorite_websites = [ 
+        "https://www.sephora.com/",
+        "https://www.youtube.com/",
+        "https://www.ebay.com/"
+        ];
+        
+        // display websites on webpage
+        document.write("<h2>Popular Websites</h2>");
+        document.write("<a href='" +  favorite_websites[0] + "'>" + "Sephora" + "</a>");
+        document.write("<a href='" + favorite_websites[1] + "'>" + "YouTube" + "</a>");
+        document.write("<a href='" + favorite_websites[2] + "'>" + "Ebay" + "</a>");
+
+
+        var user_website = prompt("Enter your favorite website: ");
+       
+        // two different ways to add user website to the end of an array
+        // favorite_websites[3] = user_website;
+        favorite_websites.push(user_website);
+
+        // removes the first website from the array
+        favorite_websites.shift(0);
+
+       // display updated websites with user website included 
+       document.write("<h2>Updated Popular Websites</h2>");
+       document.write("<a href='" + favorite_websites[0] + "'>" + "YouTube" + "</a>");
+       document.write("<a href='" + favorite_websites[1] + "'>" + "Ebay" + "</a>");
+       document.write("<a href='" + favorite_websites[2] + "'>" + user_website + "</a>");
+
+        </script>
+        
+        
+        
+    
+    <footer>
+        <p>&copy; 2026 Adriana Valencia. All Rights Reserved.</p>
+    </footer>
+   </body>
+
+</html>
