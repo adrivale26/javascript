@@ -76,12 +76,13 @@
         document.write("<a href='" + favorite_websites[1] + "'>" + "YouTube" + "</a>");
         document.write("<a href='" + favorite_websites[2] + "'>" + "Ebay" + "</a>");
 
-
+        // ask user for their favorite website
         var user_website = prompt("Enter your favorite website: ");
        
         // two different ways to add user website to the end of an array
-        // favorite_websites[3] = user_website;
         favorite_websites.push(user_website);
+        document.write("<a href='" + favorite_websites[3] + "'>" + user_website + "</a>");
+        
 
         // removes the first website from the array
         favorite_websites.shift(0);
