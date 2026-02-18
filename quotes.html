@@ -71,7 +71,13 @@
         ];
         
         // display websites on webpage
-        document.write("<h2>Popular Websites</h2>");
+        document.write("<h2>Favorite Websites</h2>");
+        document.write("<a href='" +  favorite_websites[0] + "'>" + "Sephora" + "</a>");
+        document.write("<a href='" + favorite_websites[1] + "'>" + "YouTube" + "</a>");
+        document.write("<a href='" + favorite_websites[2] + "'>" + "Ebay" + "</a>");
+
+        // display updated websites on webpage including user website
+        document.write("<h2>Favorite Websites</h2>");
         document.write("<a href='" +  favorite_websites[0] + "'>" + "Sephora" + "</a>");
         document.write("<a href='" + favorite_websites[1] + "'>" + "YouTube" + "</a>");
         document.write("<a href='" + favorite_websites[2] + "'>" + "Ebay" + "</a>");
@@ -87,8 +93,8 @@
         // removes the first website from the array
         favorite_websites.shift(0);
 
-       // display updated websites with user website included 
-       document.write("<h2>Updated Popular Websites</h2>");
+       // display updated websites without the first website and include user website at the end of the array
+       document.write("<h2>Favorite Websites</h2>");
        document.write("<a href='" + favorite_websites[0] + "'>" + "YouTube" + "</a>");
        document.write("<a href='" + favorite_websites[1] + "'>" + "Ebay" + "</a>");
        document.write("<a href='" + favorite_websites[2] + "'>" + user_website + "</a>");
