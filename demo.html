@@ -22,15 +22,15 @@
 
          // checks if user input is a number 
          while (isNaN(user_guess)){
-            user_guess = parseInt(prompt("Please enter a number between 1 and 5: "));
+            user_guess = Number(prompt("Please enter a number between 1 and 5: "));
          }
 
-         user_guess = parseInt(user_guess);
+         user_guess = Number(user_guess);
 
          while (user_guess != secret_number) {
             user_guess = prompt("I'm sorry. You earned 0 points! Please enter a number between 1 and 5: ");
                  while (isNaN(user_guess)) {
-                    user_guess = parseInt(prompt("Please enter a number between 1 and 5: "));
+                    user_guess = Number(prompt("Please enter a number between 1 and 5: "));
                  };
          }  
          if (user_guess == secret_number) {
