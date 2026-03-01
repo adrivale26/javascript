@@ -1,0 +1,19 @@
+body {
+    background-color: #FDF7BA;
+}
+
+p {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 260px;
+    height: 200px;
+    margin: auto; 
+    display: block;
+
+}
