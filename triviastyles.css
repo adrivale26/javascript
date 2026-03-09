@@ -1,0 +1,35 @@
+body {
+background-color: #C4A484;
+}
+
+h2 {
+text-align: center;
+}
+
+footer {
+text-align: center;
+font-size: small;
+
+
+}
+
+main {
+	text-align: left;
+	font-family: "Noto Sans", sans-serif;
+	background-color: #F9CD90;
+	border-radius: 5px;
+	margin: 6px;
+	padding: 5px;
+}
+
+img {
+display: block;
+margin: auto;
+width: 150px;
+height: 150px;
+
+}
+
+
+
+
