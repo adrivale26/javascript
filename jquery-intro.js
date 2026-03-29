@@ -20,26 +20,97 @@ var specials = ["<p>Don't forget our feathered friends!</p><p>All bird feeders a
 "<p>Christmas trees!</p><p>We have sizes from 3' to 15' and lots of varieties. Find the perfect fit for your family while they last!</p>"];
 
 
+function date() {
+var today = new Date();
 
+var months =  ['January', 'February', 'March', 'April', 'May','June', 
+'July', 'August', 'September', 'October',
+'November', 'December'];
 
+var month = months[today.getMonth()];
+var day = today.getDate();
+var fullYear = today.getFullYear();
+
+// get month number 
+var monthIndex = today.getMonth();
+
+return {
+    month,
+	day,
+	fullYear,
+	monthIndex
+};
+
+}
 
 /* JavaScript, place this in your external JavaScript file */
 
 $(document).ready(function() {
-	var today = new Date();
-	var months =  ['January', 'February', 'March', 'April', 'May','June', 
-	'July', 'August', 'September', 'October',
-    'November', 'December'];
-	var month = months[today.getMonth()];
-	var day = today.getDate();
-	var fullYear = [today.getFullYear()];
+	var todaysDate = date();
 	
-	document.write('<p>Today is: ' + month + ' ' + day + '</p>');
+	// if month is equal to december print happy holidays
+	if (todaysDate.month == 'December') {
+		$('#slogan').after('<h3>Happy Holidays</h3>')
+	}
 	
-	document.getElementById
+	$('#month').html('<h3>Tips for ' + todaysDate.month + '</h3>')
+	
+	
+	// display year using append method
+    $('#copy').append(todaysDate.fullYear);
+	
+	// use month index to print index from the specials array
+	var month_specials = specials[todaysDate.monthIndex];
+	$('#specials').append('<p>' + month_specials + '</p>')
+	
+	
+	
+	var monthsIndex = todaysDate.monthIndex;
+	
+	// access season tips
+	var winter_tips = tips[0];
+	var spring_tips = tips[1];
+	var summer_tips = tips[2];
+	var fall_tips = tips[3];
 	
 
-	
+   // create a switch statement with elements for each season
+	switch (monthsIndex) {
+    case 11:
+	case 0:
+	case 1:
+		$('body').css('background-image', 'url(winterbg.jpg)')
+		$('strong, h1, h2, h3').css('color', '#00f')
+		$('#seasontips').html('<p>' + winter_tips + '</p>')
+		$('#specials').addClass('Winter')
+		break;
+	case 2:
+	case 3:
+	case 4:
+		$('body').css('background-image', 'url(springbg.jpg)')
+		$('strong, h1, h2, h3').css('color', '#d7d')
+		$('#seasontips').html('<p>' + spring_tips + '</p>')
+		$('#specials').addClass('Spring')
+		break;
+	case 5:
+	case 6:
+	case 7:
+		$('body').css('background-image', 'url(summerbg.jpg)')
+		$('strong, h1, h2, h3').css('color', '#006400')
+		$('#seasontips').html('<p>' + summer_tips + '</p>')
+		$('#specials').addClass('Summer')
+		break;
+	case 8:
+	case 9:
+	case 10:
+		$('body').css('background-image', 'url(fallbg.jpg)')
+		$('strong, h1, h2, h3').css('color', '#930')
+		$('#seasontips').html('<p>' + fall_tips + '</p>')
+		$('#specials').addClass('Fall')
+		break;
+
+	}
+		
 console.log('Ready!')
 
 });
