@@ -23,7 +23,7 @@ $(document).ready(function() {
 		//get id attributes of the clicked element
 		var itemID = $(this).attr('id')
 		
-		var cartLink = "<li class='cartItem' name='" + itemID + "'>" + itemName + " <span class='del'>Remove</span></li>";
+		var cartLink = "<li class='cartItem' name='" + itemID + "'>" + itemName + delete_button + "</li>";
 		
 		// use the append method to add the name and delete button
 		$('#cart').append(cartLink);
@@ -45,7 +45,7 @@ $(document).ready(function() {
 	
 	
 	// change the img src to the specified gif using attr
-	$('.rating').click(function(evt) {
+	$('span img').click(function(evt) {
 		$(this).siblings().attr('src', 'staroff.gif');
 		$(this).attr('src', 'staron.gif');
 		$(this).prevAll().attr('src','staron.gif');
