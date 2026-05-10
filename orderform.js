@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	
+	var ordertotal = 0;
+	var shipping = 0;
+	var tax = 0;
 	// add cursor to the name field
 	$('#name').focus();
 	
@@ -55,13 +58,25 @@ $(document).ready(function() {
 	
 	
 	// check if box has been click and copy billing info
+	 // if user unchecks box remove info
 	$('#copy').change(function() {
 		if($(this).prop('checked')) {
 		$('#shipaddr').val($('#address').val())
 		$('#shipcity').val($('#city').val())
 		$('#shipstate').val($('#state').val())
 		$('#shipzip').val($('#zip').val())
-		
+		$('#shipstate').trigger('change')
+		} 
+		else {
+			if($(this).prop('checked') == false) {
+			$('#shipaddr').val('')
+			$('#shipcity').val('')
+			$('#shipstate').val('')
+			$('#shipzip').val('')
+		    $('#ship').text()
+		    $('#tax').text()
+			}
+			
 		}
 	});
 	
@@ -72,21 +87,13 @@ $(document).ready(function() {
 	
 	
 	// if user unchecks box remove info
-	$('#copy').change(function() {
-		if($(this).prop('checked') == false) {
-		$('#shipaddr').val('')
-		$('#shipcity').val('')
-		$('#shipstate').val('')
-		$('#shipzip').val('')	
-		}
-	});
-
+	
 
 	// add cursor to the quantity class
 	$('.qty').focus();
 	
 	$('.qty').on('input', function() {
-	var ordertotal = 0;
+	ordertotal = 0;
 
 	// create for loop to loop through each quantities
 	for (var i = 0; i < $('.qty').length; i ++) {
@@ -110,47 +117,41 @@ $(document).ready(function() {
 	
 	   // add order total to subtotal cell
 	   $('#subt').text(ordertotal)
-	   $('#gTotal').text(ordertotal)
+	   $('#gTotal').text(ordertotal + shipping + tax)
 	
 });
 	
 	// if state is TX add tax for other add 0 
+   // calculate shipping costs depending on state 
 	$('#shipstate').on('change', function () {
-	var shipping = 0;
-	var tax = 0;
+	shipping = 0;
+    tax = 0;
+	ordertotal = 0;
 	if ($('#shipstate').val() == 'TX') {
-		var tax = ordertotal * 0.08
+		tax = ordertotal * 0.08;
+		shipping = 5.00;
 		$('#tax').text(tax)
-	}
-	else {
-		var tax = 0
+	} else if ($('#shipstate').val() == 'CA'){
+		tax = 0;
+		shipping = 20.00;
 		$('#tax').text(tax)
 	    
-	}
-	
-	// calculate shipping costs depending on state 
-	    
-	if ($('#shipstate').val() == 'TX') {
-		var shipping = 5.00
-		$('#ship').text(shipping)
-	} else if ($('#shipstate').val() == 'CA') {
-		var shipping = 20.00
-		$('#ship').text(shipping)
 	} else if ($('#shipstate').val() == 'NY') {
-		var shipping =  20.00
+		tax = 0;
+		shipping =  20.00
 		$('#ship').text(shipping) 
-	} else {
-		var shipping =  10.00
+	}else {
+		tax = 0;
+		shipping =  10.00
 		$('#ship').text(shipping)
 	} 
+	$('#tax').text(tax);
+	$('#ship').text(shipping);
+	$('#gTotal').text(ordertotal + tax + shipping)
 	
+	});
 	
-	var grandtotal = ordertotal + shipping + tax
-	$('#gTotal').text(grandtotal)
-     });
-	
-	
-	
+
 	console.log("Ready");
 	
 	
