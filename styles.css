@@ -1,32 +1,79 @@
 body {
-    background-color: #FEEBE7;
+	background-color: #BDDDFC;
+	color: #384959;
 }
 
-h1, h2 {
-    text-align: center
+
+
+h1, h2{
+	text-align: center;
+	color: #384959;
 }
 
-#about-me {
-    background-color: #DDF5CB;
-    border-radius: 10px;
+#assignment-pages {
+	display: grid;
+	grid-template-columns: auto auto;
+	text-align: center;
+	background-color: #FCEBF6;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 15px;
+	
+   
 }
+
+#wrapper {
+	padding: 20px;
+	background-color: #fdf8e1;
+	border-radius: 10px;
+	margin: 15px;
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+#assignment-pages a {
+	color: #384959;
+	
+}
+
+
 
 nav a {
-    text-decoration: none; 
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px;
+	text-decoration: none;
+	background-color: #e1ecf5;
+	padding: 4px;
+	margin: 2px;
+	border-radius: 4px;
+	color: #384959;
+	
 }
 
-nav {
-    text-align: right;
+
+img {
+	margin: auto;
+	display: none;
+	width: 210px;
+	height: 250px;
+	padding: 15px;
 }
 
-span {
-   font-style: oblique; 
+#contact-me {
+	text-align: center;
+
 }
 
-.footer-design {
-    text-align: center;
-    font-size: small;
+
+#message {
+	padding:4px;
 }
+
+footer {
+	text-align: center;
+	font-size: small;
+}
+
+#form {
+	text-align: center;
+}
+
+
