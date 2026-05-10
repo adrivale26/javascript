@@ -11,8 +11,9 @@ function message() {
 }
 
 $( document ).ready(function() {
+	 message();
 	//when page loads fade img in slowly
-	$('#img1').fadeIn('slow', 'swing');
+	$('#img1').fadeIn('slow');
 	
 	//when user hovers over nav change background color
 	$("#nav a").hover(function(){
@@ -20,7 +21,6 @@ $( document ).ready(function() {
 	  }, function(){
 	  $(this).css("background-color", "#e1ecf5");
 	});
-
 
     console.log( "ready!" );
 });
